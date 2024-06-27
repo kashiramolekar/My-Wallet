@@ -70,6 +70,7 @@ function App() {
                             <Route path="/user/editSavedTransaction/:transactionId" element={<EditSavedTransaction />} />
                             <Route path='/user/statistics' element={<UserStatistics />} />
                             <Route path='/user/settings' element={<UserProfile />} />
+                           
                         </Route>
 
                         <Route element={<ProtectedRoute isAllowed={AuthService.getCurrentUser() && AuthService.getCurrentUser().roles.includes("ROLE_ADMIN")} />}>
@@ -86,6 +87,7 @@ function App() {
                         <Route path="/auth/register" element={<Register />} />
                         <Route path="/unauthorized" element={<UnAuthorizedAccessPage />} />
                         <Route path="*" element={<NotFoundPage />} />
+                      
                     </Routes>
                 </RoutesWrapper>
             </ThemeContext.Provider>

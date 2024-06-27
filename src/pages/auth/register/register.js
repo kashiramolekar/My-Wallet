@@ -107,8 +107,28 @@ function Register() {
                             })
                         }
                     />
+
                     {formState.errors.cpassword && <small>{formState.errors.cpassword.message}</small>}
                 </div>
+                <div className='input-box'>
+    <label>Phone Number</label><br/>
+    <input 
+        type='tel'
+        {
+            ...register('phoneno', {
+                required: 'Phone number is required!',
+                pattern: {
+                    value: /^[0-9]{10}$/, // Adjust the regex pattern as per your requirement
+                    message: 'Phone number must be 10 digits long'
+                }
+            })
+        }
+    />
+    {formState.errors.phoneno && <small>{formState.errors.phoneno.message}</small>}
+</div>
+
+
+                
                 
                 <div className='input-box'>
                     <input type='submit' value={isLoading ? "Please wait" : 'Register'}
